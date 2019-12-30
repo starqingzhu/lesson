@@ -11,11 +11,18 @@ import "fmt"
 用户自定义类型
 方法
 参数: 指针和值
-接口多态:指代码根据类型的具体实现采取不同行为的能力
+接口+多态:指代码根据类型的具体实现采取不同行为的能力
 组合+扩展类型
 标识符
-
 接口:是用来定义行为的类型。这些被定义的行为不由接口直接实现，而是通过方法由用户定义的类型实现。
+
+
+嵌入类型:目的代码复用
+	注意:内部类型+外部类型，内部类型的方法在外部类型没有实现时，自动提升为外部类型，一旦外部类型实现了同样方法，内部类型则不提升为外部类型也不会消失。
+
+公开和未公开的标识符:
+
+
 */
 
 type (
@@ -33,9 +40,19 @@ type (
 		level  string
 	}
 
+	//嵌入类型
+	Manager struct {
+		User
+		Level string
+	}
+
 	//基于已有类型重新定义类型
 	Duration int64
 )
+
+func (u *User)Printp(){
+	fmt.Printf("User:%+v\n",u)
+}
 
 func (ad Admin) Print(){
 	fmt.Printf("Admin:---->\npserson:%+v\nlevel:%s\n",ad.person,ad.level)
@@ -136,4 +153,20 @@ func TestMutiInterfaceNotify(){
 	sendNotification(&u)
 	sendNotification(&a)
 }
+
+func TestInsertion(){
+	fmt.Println("---------test insertion----------")
+	m := Manager{
+		User:  User{
+			name:          "m.Mr.sun",
+			email:         "m.starqingzhu@163.com",
+			ext:           0,
+			intprivileged: true,
+		},
+		Level: "1",
+	}
+	fmt.Printf("Manager:\n%+v\n",m)
+	m.User.Printp()
+}
+
 

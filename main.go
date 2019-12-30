@@ -43,6 +43,7 @@ func main() {
 	mytype.Func()
 	mytype.TestInterfaceNotify()
 	mytype.TestMutiInterfaceNotify()
+	mytype.TestInsertion()
 
 
 
