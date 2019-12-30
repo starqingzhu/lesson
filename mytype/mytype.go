@@ -83,6 +83,57 @@ func Func(){
 	ad.Printp()
 }
 
-func Interface(){
 
+type Notifier interface{
+	Notify()
 }
+
+type (
+	IUser struct {
+		name		string
+		email		string
+	}
+	IAdmin struct {
+		name		string
+		email		string
+	}
+)
+
+func (u *IUser) Notify(){
+	fmt.Printf("Sending user email to %s<%s>\n",u.name,u.email)
+}
+
+
+func sendNotification(n Notifier){
+	n.Notify()
+}
+
+func TestInterfaceNotify(){
+	fmt.Println("---------test interface----------")
+	u := IUser{
+		name:  "sun",
+		email: "starqingzhu@163.com",
+	}
+	fmt.Printf("IUser:\n%+v\n",u)
+	sendNotification(&u)
+}
+
+func (a *IAdmin)Notify(){
+	fmt.Printf("Sending user email to %s<%s>\n",a.name,a.email)
+}
+
+func TestMutiInterfaceNotify(){
+	fmt.Println("---------test muti interface----------")
+	u := IUser{
+		name:  "sun",
+		email: "starqingzhu@163.com",
+	}
+	a := IAdmin{
+		name:  "a_sun",
+		email: "starqingzhu@163.com",
+	}
+	fmt.Printf("IUser:\n%+v\nIAdmin:\n%+v\n",u,a)
+	sendNotification(&u)
+	sendNotification(&a)
+}
+

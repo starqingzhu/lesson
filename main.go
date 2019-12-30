@@ -41,5 +41,9 @@ func main() {
 	fmt.Println("语言类型测试专用----------------------------------->>>>>>>>>>>")
 	mytype.Init()
 	mytype.Func()
+	mytype.TestInterfaceNotify()
+	mytype.TestMutiInterfaceNotify()
+
+
 
 }
