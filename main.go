@@ -7,9 +7,11 @@ import (
 	"lession/mymap"
 	"lession/myslice"
 	"lession/mytype"
+	"time"
 )
 
 func main() {
+	defer durationTotal(time.Now().UnixNano())
 	fmt.Println("hello测试专用----------------------------------->>>>>>>>>>>")
 	hello.PrintHello()
 
@@ -46,6 +48,13 @@ func main() {
 	mytype.TestInsertion()
 	testPrivateValue()
 	testPrivateInsertion()
+
+}
+
+
+func durationTotal(begin int64){
+	duration := time.Now().UnixNano() - begin
+	fmt.Printf("duration elapse: %dus\n",duration/1000000)
 
 }
 
