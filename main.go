@@ -44,7 +44,30 @@ func main() {
 	mytype.TestInterfaceNotify()
 	mytype.TestMutiInterfaceNotify()
 	mytype.TestInsertion()
+	testPrivateValue()
+	testPrivateInsertion()
 
+}
 
+func testPrivateValue(){
+	fmt.Println("---------test private value----------")
+	counter := mytype.New(10)
+	fmt.Printf("counter:%d\n",counter)
+}
 
+func testPrivateInsertion(){
+	fmt.Println("---------test private insertion----------")
+	ad1 := mytype.Admin1{
+		Level: 0,
+	}
+	ad1.Name = "sunbin01"
+	//ad1.email = "starqingzhu@163.com" //未公开变量无法外部访问
+
+	ad2 := mytype.Admin2{
+		Level: 1,
+	}
+	ad2.Name = "sunbin02"
+	ad2.Email = "starqingzhu@163.com"
+
+	fmt.Printf("ad1:\n\t%+v\nad2:\n\t%+v\n",ad1,ad2)
 }

@@ -21,7 +21,8 @@ import "fmt"
 	注意:内部类型+外部类型，内部类型的方法在外部类型没有实现时，自动提升为外部类型，一旦外部类型实现了同样方法，内部类型则不提升为外部类型也不会消失。
 
 公开和未公开的标识符:
-
+	1.公开或者未公开的标识符，不是一个值
+	2.短变量声明操作符，有能力捕获引用的类型，并创建一个未公开的类型变量
 
 */
 
@@ -168,5 +169,32 @@ func TestInsertion(){
 	fmt.Printf("Manager:\n%+v\n",m)
 	m.User.Printp()
 }
+
+type alertCounter int
+func New(value int)alertCounter{
+	return alertCounter(value)
+}
+
+type (
+	user1 struct {
+		Name string
+		email string
+	}
+	Admin1 struct {
+		user1
+		Level int
+	}
+
+	user2 struct {
+		Name string
+		Email string
+	}
+	Admin2 struct {
+		user2
+		Level int
+	}
+
+)
+
 
 
