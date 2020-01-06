@@ -54,7 +54,7 @@ func main() {
 
 func durationTotal(begin int64){
 	duration := time.Now().UnixNano() - begin
-	fmt.Printf("duration elapse: %dus\n",duration/1000000)
+	fmt.Printf("\n\nduration elapse: %dus\n\n\n",duration/1000000)
 
 }
 
