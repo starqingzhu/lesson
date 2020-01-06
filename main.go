@@ -7,11 +7,19 @@ import (
 	"lession/mymap"
 	"lession/myslice"
 	"lession/mytype"
+	"runtime"
 	"time"
+)
+
+const (
+	MAX_PROC  = 5
 )
 
 func main() {
 	defer durationTotal(time.Now().UnixNano())
+	runtime.GOMAXPROCS(MAX_PROC)
+
+
 	fmt.Println("hello测试专用----------------------------------->>>>>>>>>>>")
 	hello.PrintHello()
 
