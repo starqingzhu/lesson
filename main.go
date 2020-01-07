@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"lession/hello"
 	"lession/myarray"
+	"lession/myconcurence"
 	"lession/mymap"
 	"lession/myslice"
 	"lession/mytype"
@@ -12,7 +13,7 @@ import (
 )
 
 const (
-	MAX_PROC  = 5
+	MAX_PROC  = 1
 )
 
 func main() {
@@ -57,7 +58,25 @@ func main() {
 	testPrivateValue()
 	testPrivateInsertion()
 
+	fmt.Println("协程测试专用-------------------------------------->>>>>>>>>>>")
+	myconcurence.TestMyGoroutine()
+	myconcurence.TestMyGoroutineAtomic()
+	myconcurence.TestMyGoroutineMutex()
+	myconcurence.TestMyGoroutineChan()
+
 }
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 func durationTotal(begin int64){
@@ -85,6 +104,7 @@ func testPrivateInsertion(){
 	}
 	ad2.Name = "sunbin02"
 	ad2.Email = "starqingzhu@163.com"
+
 
 	fmt.Printf("ad1:\n\t%+v\nad2:\n\t%+v\n",ad1,ad2)
 }
