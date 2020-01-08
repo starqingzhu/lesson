@@ -63,6 +63,7 @@ func main() {
 	myconcurence.TestMyGoroutineAtomic()
 	myconcurence.TestMyGoroutineMutex()
 	myconcurence.TestMyGoroutineChan()
+	myconcurence.TestRunner()
 
 }
 
