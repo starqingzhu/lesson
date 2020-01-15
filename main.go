@@ -7,6 +7,7 @@ import (
 	"lession/myconcurence"
 	"lession/mymap"
 	"lession/myslice"
+	"lession/mysrclib"
 	"lession/mytype"
 	"runtime"
 	"time"
@@ -64,6 +65,9 @@ func main() {
 	myconcurence.TestMyGoroutineMutex()
 	myconcurence.TestMyGoroutineChan()
 	myconcurence.TestRunner()
+
+	fmt.Println("标准库使用测试专用-------------------------------------->>>>>>>>>>>")
+	mysrclib.TestLogFmt()
 
 }
 
