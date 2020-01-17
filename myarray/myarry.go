@@ -4,6 +4,10 @@ import (
 	"fmt"
 )
 
+func init(){
+	fmt.Println("---------welcome myarry init----------")
+}
+
 func MyArrInit() {
 
 	/*

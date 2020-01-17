@@ -9,6 +9,10 @@ import "fmt"
 3.创建处理任务的协程池
  */
 
+func init(){
+	fmt.Println("---------welcome myrunner init----------")
+}
+
 func TestRunner(){
 	fmt.Println("---------test my goroutine runner-----------")
 }

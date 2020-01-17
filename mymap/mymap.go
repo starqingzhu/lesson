@@ -5,6 +5,10 @@ import (
 	"unsafe"
 )
 
+func init(){
+	fmt.Println("---------welcome mymap init----------")
+}
+
 func MyMapInit() {
 	fmt.Println("---------map init----------")
 	mp1 := map[string]int{"1": 1, "2": 2, "3": 3}
@@ -77,7 +81,7 @@ func MyMapFunc(mp1 map[string]int) {
 func TestMapCap() {
 	fmt.Println("---------map test cap----------")
 	mp1 := map[string]int{"1": 1, "2": 2, "3": 3, "4": 4}
-	ln, cp := getMapInfo(mp1)
+	ln, cp := getMapMyInfo(mp1)
 	fmt.Printf("初始状态:\nmap1->:%+v	len:%d	cap:%d\n", mp1, ln, cp)
 }
 
@@ -90,7 +94,7 @@ type hmap struct {
 	oldbuckets unsafe.Pointer
 }
 
-func getMapInfo(m map[string]int) (int, int) {
+func getMapMyInfo(m map[string]int) (int, int) {
 	point := (**hmap)(unsafe.Pointer(&m))
 	value := *point
 	return value.count, int(value.B)

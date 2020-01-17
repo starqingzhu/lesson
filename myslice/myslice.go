@@ -6,6 +6,10 @@ import (
 	"unsafe"
 )
 
+func init(){
+	fmt.Println("---------welcome myslice init----------")
+}
+
 func MySliceInit() {
 	fmt.Println("---------slice init----------")
 	sl1 := make([]int64, 5)
@@ -103,7 +107,7 @@ func MyFuncSlice(sl *[]int) {
 	}
 }
 
-func MySliceMemInfo() {
+func MySliceMemMyInfo() {
 	fmt.Println("---------func slice----------")
 	//sl := make([][]int, 2,10)
 	sl := [][]int{{1, 2, 6, 7}, {3, 4, 5}}

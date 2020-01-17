@@ -54,6 +54,10 @@ const (
 	RoutineNum = 2
 )
 
+func init(){
+	fmt.Println("---------welcome myconcurence init----------")
+}
+
 func TestMyGoroutine(){
 	fmt.Println("---------test my goroutine----------")
 

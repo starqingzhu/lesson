@@ -39,7 +39,7 @@ func main() {
 	myslice.MySliceRange()
 	myslice.MyMutiSlice()
 	myslice.TestMyFuncSlice()
-	myslice.MySliceMemInfo()
+	myslice.MySliceMemMyInfo()
 
 	fmt.Println("映射测试专用----------------------------------->>>>>>>>>>>")
 	mymap.MyMapInit()
@@ -56,6 +56,7 @@ func main() {
 	mytype.TestInterfaceNotify()
 	mytype.TestMutiInterfaceNotify()
 	mytype.TestInsertion()
+	mytype.TestInsertionFloat()
 	testPrivateValue()
 	testPrivateInsertion()
 
@@ -68,6 +69,10 @@ func main() {
 
 	fmt.Println("标准库使用测试专用-------------------------------------->>>>>>>>>>>")
 	mysrclib.TestLogFmt()
+	mysrclib.TestMylogger()
+	mysrclib.TestJsonDecodePerson()
+	mysrclib.TestJsonEncodePerson()
+	mysrclib.TestMyIo()
 
 }
 

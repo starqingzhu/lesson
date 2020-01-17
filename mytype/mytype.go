@@ -1,6 +1,8 @@
 package mytype
 
-import "fmt"
+import (
+	"fmt"
+)
 
 /*
 
@@ -25,6 +27,10 @@ import "fmt"
 	2.短变量声明操作符，有能力捕获引用的类型，并创建一个未公开的类型变量
 
 */
+
+func init(){
+	fmt.Println("---------welcome mytype init----------")
+}
 
 type (
 	//创建自定义类型
@@ -195,6 +201,16 @@ type (
 	}
 
 )
+
+func TestInsertionFloat(){
+	fmt.Println("---------test insertion float----------")
+	var x1 int64 = 10
+	var x2 int64 = 100.00
+	fmt.Printf("浮点数:%.2f\n",float64(x1)/float64(x2))
+}
+
+
+
 
 
 

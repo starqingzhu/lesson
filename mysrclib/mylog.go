@@ -39,6 +39,7 @@ const (
 )
 
 func init(){
+	fmt.Println("---------welcome mylog init----------")
 	log.SetPrefix(Prefix)
 	log.SetFlags(Flags)
 }
@@ -46,6 +47,9 @@ func init(){
 func TestLogFmt(){
 	fmt.Printf("-----------test logfmt ------------\n")
 	log.Printf("%d %d %d\n",MB,MD,MA)
+
+
+
 }
 
 
