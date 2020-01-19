@@ -11,7 +11,7 @@ func TestMyIo(){
 
 	var b bytes.Buffer
 	b.WriteString("hello ")
-	fmt.Fprintf(&b,"%s%s","world!"," !!!!")
+	fmt.Fprintf(&b,"%s%s","world!"," !!!!\n")
 
 	b.WriteTo(os.Stdout)
 }

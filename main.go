@@ -5,10 +5,12 @@ import (
 	"lession/hello"
 	"lession/myarray"
 	"lession/myconcurence"
+	"lession/myhttp"
 	"lession/mymap"
 	"lession/myslice"
 	"lession/mysrclib"
 	"lession/mytype"
+	tools "lession/tools/mytime"
 	"runtime"
 	"time"
 )
@@ -17,10 +19,13 @@ const (
 	MAX_PROC  = 1
 )
 
+func init(){
+	fmt.Println("----------------------------------------------main begin--------------------------------------------------------")
+}
+
 func main() {
 	defer durationTotal(time.Now().UnixNano())
 	runtime.GOMAXPROCS(MAX_PROC)
-
 
 	fmt.Println("hello测试专用----------------------------------->>>>>>>>>>>")
 	hello.PrintHello()
@@ -73,6 +78,11 @@ func main() {
 	mysrclib.TestJsonDecodePerson()
 	mysrclib.TestJsonEncodePerson()
 	mysrclib.TestMyIo()
+
+	fmt.Println("http库使用测试专用-------------------------------------->>>>>>>>>>>")
+	myhttp.TestMyHttp()
+
+	tools.TestRenameFile()
 
 }
 
