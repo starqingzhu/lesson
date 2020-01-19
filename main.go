@@ -10,7 +10,6 @@ import (
 	"lession/myslice"
 	"lession/mysrclib"
 	"lession/mytype"
-	tools "lession/tools/mytime"
 	"runtime"
 	"time"
 )
@@ -81,8 +80,6 @@ func main() {
 
 	fmt.Println("http库使用测试专用-------------------------------------->>>>>>>>>>>")
 	myhttp.TestMyHttp()
-
-	tools.TestRenameFile()
 
 }
 
