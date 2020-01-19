@@ -13,7 +13,9 @@ const (
 
 //时间级别范围
 const (
-	Day = iota + 1
+	Year	= iota + 1
+	Month
+	Day
 	Hour
 	Minute
 	Second
@@ -31,6 +33,8 @@ type (
 
 func init()  {
 	DateLevel = map[int64]string{
+		Year	:	"Year",
+		Month	:	"Month",
 		Day		:	"Day",
 		Hour	:	"Hour",
 		Minute	:	"Minute",
@@ -62,21 +66,34 @@ func RenameFile(fileName string,fc renameFunc)string{
 func GetFileDateName(dateLevel int64)string{
 	tm := time.Now()
 	var dateStr string
+
 	dateStr += completionTwoNumber(tm.Year())
+	if dateLevel == Year{
+		return dateStr
+	}
+
 	dateStr += completionTwoNumber(int(tm.Month()))
+	if dateLevel == Month{
+		return dateStr
+	}
+
 	dateStr += completionTwoNumber(int(tm.Day()))
 	if dateLevel == Day{
 		return dateStr
 	}
+
 	dateStr += "_"
+
 	dateStr += completionTwoNumber(int(tm.Hour()))
 	if dateLevel == Hour{
 		return dateStr
 	}
+
 	dateStr += completionTwoNumber(tm.Minute())
 	if dateLevel == Minute{
 		return dateStr
 	}
+
 	dateStr += completionTwoNumber(tm.Second())
 	if dateLevel == Second{
 		return dateStr
