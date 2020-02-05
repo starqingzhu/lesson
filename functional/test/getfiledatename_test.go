@@ -23,6 +23,9 @@ import (
 )
 
 func TestRenameFile(t *testing.T) {
+	//测试用例并行
+	t.Parallel()
+
 	path := "./log/"
 	file := "hello.log"
 
