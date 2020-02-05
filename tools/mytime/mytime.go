@@ -54,14 +54,6 @@ func RenameFile(fileName string,fc renameFunc)string{
 	return res
 }
 
-//func TestRenameFile(){
-//	path := "./log/"
-//	file := "hello.log"
-//
-//	 reName := RenameFile(file,GetFileDateName_Day)
-//
-//	fmt.Printf("Rename file,str=%s\n",path+reName)
-//}
 
 func GetFileDateName(dateLevel int64)string{
 	tm := time.Now()
