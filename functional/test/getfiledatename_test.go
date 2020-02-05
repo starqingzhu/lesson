@@ -19,6 +19,7 @@ go test -v -test.run 测试函数名
 
 import (
 	"lession/tools/mytime"
+	"os"
 	"testing"
 )
 
@@ -32,4 +33,12 @@ func TestRenameFile(t *testing.T) {
 	reName := tools.RenameFile(file, tools.GetFileDateName_Day)
 
 	t.Logf("Rename file,str=%s\n", path+reName)
+}
+func Test1Env(t *testing.T) {
+	//测试用例并行
+	t.Parallel()
+
+	key := "GOPATH"
+	value := os.Getenv(key)
+	t.Logf("key:%s  value:%s\n",key,value)
 }
