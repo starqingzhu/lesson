@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"lession/hello"
 	"lession/myarray"
+	"lession/mychan"
 	"lession/myconcurence"
 	"lession/myhttp"
 	"lession/mymap"
@@ -80,6 +81,9 @@ func main() {
 
 	fmt.Println("http库使用测试专用-------------------------------------->>>>>>>>>>>")
 	myhttp.TestMyHttp()
+
+	fmt.Println("chan使用测试专用-------------------------------------->>>>>>>>>>>")
+	mychan.TestBufChan()
 
 }
 
