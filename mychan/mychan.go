@@ -2,7 +2,6 @@ package mychan
 
 import (
 	"fmt"
-	"time"
 )
 
 /*
@@ -23,7 +22,7 @@ func BufChan(){
 
 func TestBufChan(){
 	go BufChan()
-	time.Sleep(1*time.Second)
+	//time.Sleep(1*time.Second)
 
 	var res string
 	for res = range ch1 {
