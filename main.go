@@ -9,6 +9,7 @@ import (
 	"lession/myhttp"
 	"lession/mymap"
 	"lession/myslice"
+	"lession/mysort"
 	"lession/mysrclib"
 	"lession/mytype"
 	"runtime"
@@ -85,6 +86,8 @@ func main() {
 	fmt.Println("chan使用测试专用-------------------------------------->>>>>>>>>>>")
 	mychan.TestBufChan()
 
+	fmt.Println("sort使用测试专用-------------------------------------->>>>>>>>>>>")
+	mysort.MySort()
 }
 
 
