@@ -20,8 +20,8 @@ import (
 
 const (
 	MB int = iota
-	MC
-	MD
+	MC = 1
+	MD = iota
 )
 
 const (
@@ -46,7 +46,7 @@ func init(){
 
 func TestLogFmt(){
 	fmt.Printf("-----------test logfmt ------------\n")
-	log.Printf("%d %d %d\n",MB,MD,MA)
+	log.Printf("iota %d %d %d\n",MB,MC,MD)
 
 
 

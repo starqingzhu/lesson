@@ -22,18 +22,59 @@ const (
 	PREFIX_INFO		= "MyInfo:    "
 	PREFIX_WARNING	= "MyWarning: "
 	PREFIX_ERROR	= "MyError:   "
-	PREFIX_FILE		= ""
+	//PREFIX_FILE		= ""
 	FLAG	= log.Ldate | log.Ltime | log.Lshortfile
 )
+
+func PathExists(path string) (bool, error) {
+	_, err := os.Stat(path)
+	if err == nil {
+		return true, nil
+	}
+	if os.IsNotExist(err) {
+		return false, nil
+	}
+	return false, err
+}
+
+func DirCreate(path string) (err error) {
+	err = nil
+	var exist = true
+
+	exist,err = PathExists(path)
+	if err != nil {
+		return
+	}
+	if exist {
+		return
+	} else {
+		err = os.Mkdir(path,0777)
+		if err != nil{
+			return
+		}
+		exist = true
+	}
+
+	return
+}
+
 
 func  init(){
 	fmt.Println("---------welcome mylogger init----------")
 
-	fileName := "./log/errors_" + tools.GetFileDateName_Day()
+	path := "./log/"
+
+	if err := DirCreate(path);err != nil{
+		fmt.Printf("test mkdir path failed,err:%v\n",err)
+		return
+	}
+
+
+	fileName := path+"errors_" + tools.GetFileDateName_Day()
 	fileName += ".log"
 	file ,err := os.OpenFile(fileName,os.O_CREATE | os.O_WRONLY | os.O_APPEND,0666)
 	if err != nil{
-		fmt.Printf("open file failed\n")
+		fmt.Printf("test open file failed,err:%v\n",err)
 		return
 	}
 
