@@ -46,10 +46,7 @@ func init(){
 
 func TestLogFmt(){
 	fmt.Printf("-----------test logfmt ------------\n")
-	log.Printf("iota %d %d %d\n",MB,MC,MD)
-
-
-
+	fmt.Printf("log iota %d %d %d\n",MB,MC,MD)
 }
 
 

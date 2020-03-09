@@ -90,5 +90,5 @@ func TestMylogger(){
 	MyTrace.Println("I have something standard to say")
 	MyInfo.Println("Special MyInformation")
 	MyWarning.Println("There is something you need to know about")
-	MyError.Println("Something has failed")
+	//MyError.Println("Something has failed")
 }

@@ -6,6 +6,7 @@ import (
 	"lession/myarray"
 	"lession/mychan"
 	"lession/myconcurence"
+	"lession/myfunc"
 	"lession/myhttp"
 	"lession/mymap"
 	"lession/myslice"
@@ -65,6 +66,7 @@ func main() {
 	mytype.TestInsertionFloat()
 	testPrivateValue()
 	testPrivateInsertion()
+	mytype.TestInsert2()
 
 	fmt.Println("协程测试专用-------------------------------------->>>>>>>>>>>")
 	myconcurence.TestMyGoroutine()
@@ -88,6 +90,8 @@ func main() {
 
 	fmt.Println("sort使用测试专用-------------------------------------->>>>>>>>>>>")
 	mysort.MySort()
+	fmt.Println("func使用测试专用-------------------------------------->>>>>>>>>>>")
+	myfunc.Testfunc()
 }
 
 
