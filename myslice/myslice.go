@@ -6,7 +6,7 @@ import (
 	"unsafe"
 )
 
-func init(){
+func init() {
 	fmt.Println("---------welcome myslice init----------")
 }
 

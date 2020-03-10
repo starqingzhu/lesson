@@ -48,22 +48,21 @@ import (
 
 
 
- */
+*/
 
 const (
 	RoutineNum = 2
 )
 
-func init(){
+func init() {
 	fmt.Println("---------welcome myconcurence init----------")
 }
 
-func TestMyGoroutine(){
+func TestMyGoroutine() {
 	fmt.Println("---------test my goroutine----------")
 
 	var wg sync.WaitGroup
 	wg.Add(RoutineNum)
-
 
 	fmt.Println("Start Goroutines")
 
@@ -98,10 +97,11 @@ func TestMyGoroutine(){
 }
 
 var (
-	counter	int64
-	wgam	sync.WaitGroup
-	mutex	sync.Mutex
+	counter int64
+	wgam    sync.WaitGroup
+	mutex   sync.Mutex
 )
+
 const (
 	RoutineAtomicNum = 2
 )
@@ -118,14 +118,14 @@ func TestMyGoroutineAtomic() {
 	fmt.Println("Final Counter:", counter)
 }
 
-func incCounter(id int){
+func incCounter(id int) {
 	defer wgam.Done()
 
-	fmt.Printf("welcome into incCounter,id:%d\n",id)
+	fmt.Printf("welcome into incCounter,id:%d\n", id)
 
-	var max int64= 2
-	for counterI:=int64(0);counterI < max;counterI++{
-		atomic.AddInt64(&counter,1)
+	var max int64 = 2
+	for counterI := int64(0); counterI < max; counterI++ {
+		atomic.AddInt64(&counter, 1)
 		runtime.Gosched()
 	}
 }
@@ -143,12 +143,12 @@ func TestMyGoroutineMutex() {
 
 }
 
-func incCounterMutex(id int){
+func incCounterMutex(id int) {
 	defer wgam.Done()
-	fmt.Printf("welcome into incCounterMutex,id:%d\n",id)
+	fmt.Printf("welcome into incCounterMutex,id:%d\n", id)
 
-	var max int64= 2
-	for counterI:=int64(0);counterI < max;counterI++{
+	var max int64 = 2
+	for counterI := int64(0); counterI < max; counterI++ {
 
 		mutex.Lock()
 		{
@@ -165,10 +165,10 @@ func incCounterMutex(id int){
 
 func TestMyGoroutineChan() {
 	fmt.Println("---------test my goroutine chan-----------")
-	ch1 := make(chan string,10)
+	ch1 := make(chan string, 10)
 	ch1 <- "hello"
 
 	value := <-ch1
 
-	fmt.Printf("chan value:%s\n",value)
+	fmt.Printf("chan value:%s\n", value)
 }

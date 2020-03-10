@@ -15,7 +15,7 @@ package test
 
 测试时要在测试目录下
 go test -v -test.run 测试函数名
- */
+*/
 
 import (
 	"lession/tools/mytime"
@@ -40,5 +40,5 @@ func Test1Env(t *testing.T) {
 
 	key := "GOPATH"
 	value := os.Getenv(key)
-	t.Logf("key:%s  value:%s\n",key,value)
+	t.Logf("key:%s  value:%s\n", key, value)
 }

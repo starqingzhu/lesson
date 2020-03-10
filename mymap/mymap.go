@@ -15,9 +15,9 @@ import (
 什么类型求哈希快呢？
 宽度越窄求哈希越快（宽度指占用空间长度）。eg：char、uint8、int8、bool
 
- */
+*/
 
-func init(){
+func init() {
 	fmt.Println("---------welcome mymap init----------")
 }
 

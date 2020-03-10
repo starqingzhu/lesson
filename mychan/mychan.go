@@ -47,7 +47,6 @@ func TestBufChan() {
 		continue
 	}
 
-
 	// 准备好几个通道。
 	chanLen := 1
 	intChannels := [3]chan int{

@@ -24,9 +24,9 @@ import (
 
 //函数签名
 type (
-	Printer func(contents string) (n int, err error)
-	Operate func(x, y int) int
-	OperateCheck func(x, y int) (int,error)
+	Printer      func(contents string) (n int, err error)
+	Operate      func(x, y int) int
+	OperateCheck func(x, y int) (int, error)
 )
 
 func printToStd(contents string) (bytesNum int, err error) {
@@ -40,8 +40,7 @@ func calculate(x int, y int, op Operate) (int, error) {
 	return op(x, y), nil
 }
 
-
-func genCalculator(op Operate) (OperateCheck) {
+func genCalculator(op Operate) OperateCheck {
 	return func(x int, y int) (int, error) {
 		if op == nil {
 			return 0, errors.New("invalid operation")
@@ -66,12 +65,11 @@ func Testfunc() {
 	fmt.Printf("func calculate res %d\n", res)
 
 	checkRes := genCalculator(op)
-	res,err = checkRes(2,2)
-	if err != nil{
+	res, err = checkRes(2, 2)
+	if err != nil {
 		fmt.Printf("func checkRes err %d\n", err)
 		return
 	}
 	fmt.Printf("func checkRes res %d\n", res)
-
 
 }

@@ -5,9 +5,10 @@ import (
 	tools "lession/tools/mytime"
 	"testing"
 )
+
 /*
 基准测试辅助函数
- */
+*/
 func RenameFileTest() {
 	path := "./log/"
 	file := "hello.log"
@@ -19,7 +20,7 @@ func RenameFileTest() {
 
 /*
 基准测试都在下面
- */
+*/
 
 func BenchmarkSprintf(b *testing.B) {
 	number := 10
@@ -38,10 +39,10 @@ func BenchmarkLogf(b *testing.B) {
 	}
 }
 
-func BenchmarkRename(b *testing.B)  {
+func BenchmarkRename(b *testing.B) {
 	b.ResetTimer()
 
-	for i := 0;i<b.N;i++{
+	for i := 0; i < b.N; i++ {
 		RenameFileTest()
 	}
 }

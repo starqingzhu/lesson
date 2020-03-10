@@ -5,7 +5,7 @@ import (
 	//"github.com/spf13/viper"
 )
 
-func init(){
+func init() {
 	fmt.Println("---------welcome hello init----------")
 }
 

@@ -18,10 +18,10 @@ import (
 )
 
 const (
-	MAX_PROC  = 1
+	MAX_PROC = 1
 )
 
-func init(){
+func init() {
 	fmt.Println("----------------------------------------------main begin--------------------------------------------------------")
 }
 
@@ -94,32 +94,19 @@ func main() {
 	myfunc.Testfunc()
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-func durationTotal(begin int64){
+func durationTotal(begin int64) {
 	duration := time.Now().UnixNano() - begin
-	fmt.Printf("\n\nduration elapse: %dus\n\n\n",duration/1000000)
+	fmt.Printf("\n\nduration elapse: %dus\n\n\n", duration/1000000)
 
 }
 
-func testPrivateValue(){
+func testPrivateValue() {
 	fmt.Println("---------test private value----------")
 	counter := mytype.New(10)
-	fmt.Printf("counter:%d\n",counter)
+	fmt.Printf("counter:%d\n", counter)
 }
 
-func testPrivateInsertion(){
+func testPrivateInsertion() {
 	fmt.Println("---------test private insertion----------")
 	ad1 := mytype.Admin1{
 		Level: 0,
@@ -133,6 +120,5 @@ func testPrivateInsertion(){
 	ad2.Name = "sunbin02"
 	ad2.Email = "starqingzhu@163.com"
 
-
-	fmt.Printf("ad1:\n\t%+v\nad2:\n\t%+v\n",ad1,ad2)
+	fmt.Printf("ad1:\n\t%+v\nad2:\n\t%+v\n", ad1, ad2)
 }

@@ -33,23 +33,23 @@ type (
 		VipAttr   string //续保 			主讲端
 	}
 	/*
-		存储样式
-		三层存储
-		维度 lessonId_liveroomId
-		主讲端：list(200条消息一链、分多链)
-		班主任侧：classid维度 list(20条消息一链、分多链)
-		学生端：nodeid维度 list(100条消息一链、分多链)
+			存储样式
+			三层存储
+			维度 lessonId_liveroomId
+			主讲端：list(200条消息一链、分多链)
+			班主任侧：classid维度 list(20条消息一链、分多链)
+			学生端：nodeid维度 list(100条消息一链、分多链)
 
-		存储控制部分
-		维度 lessonId_liveroomId
-		主讲端:key-value（cur_index当前链下标）
-		班主任侧:hash field(classid)  value(cur_index当前班级的下标)
-		学生端:hash field(nodeId) value(cur_index当前班级的下标)
+			存储控制部分
+			维度 lessonId_liveroomId
+			主讲端:key-value（cur_index当前链下标）
+			班主任侧:hash field(classid)  value(cur_index当前班级的下标)
+			学生端:hash field(nodeId) value(cur_index当前班级的下标)
 
-		msgId问题
+			msgId问题
 
-	   1.实现方案图
-	   2.功能通信流程图
+		   1.实现方案图
+		   2.功能通信流程图
 	*/
 
 	// 禁言/解禁

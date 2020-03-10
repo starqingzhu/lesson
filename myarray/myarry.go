@@ -4,7 +4,7 @@ import (
 	"fmt"
 )
 
-func init(){
+func init() {
 	fmt.Println("---------welcome myarry init----------")
 }
 

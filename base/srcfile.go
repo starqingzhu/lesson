@@ -30,14 +30,13 @@ package base
 
 
 
- */
+*/
 
 import (
 	"container/list"
 )
 
-func TestMyContainer(){
+func TestMyContainer() {
 	l := list.New()
 	l.Init()
 }
-

@@ -21,6 +21,7 @@ import (
 
 嵌入类型:目的代码复用
 	注意:内部类型+外部类型，内部类型的方法在外部类型没有实现时，自动提升为外部类型，一旦外部类型实现了同样方法，内部类型则不提升为外部类型也不会消失。
+	私有属性包内可见，包外不可见
 
 公开和未公开的标识符:
 	1.公开或者未公开的标识符，不是一个值
@@ -217,6 +218,7 @@ type (
 	People struct {
 		Length int
 		Sex    int
+		weight int
 	}
 	Title struct {
 		Level int
@@ -227,21 +229,23 @@ type (
 	}
 )
 
-func (p *People) String() (string) {
-	return fmt.Sprintf("length:%d sex:%d", p.Length, p.Sex)
+func (p *People) String() string {
+	return fmt.Sprintf("length:%d sex:%d weight:%d", p.Length, p.Sex, p.weight)
 }
-func (t *Title) String()(string){
-	return fmt.Sprintf("level:%d",t)
+func (t *Title) String() string {
+	return fmt.Sprintf("level:%d", t)
 }
 
-func (p *Boss) String() (string) {
+func (p *Boss) String() string {
 	return p.People.String() + " " + p.Title.String()
 }
 
-func TestInsert2(){
+func TestInsert2() {
 	boss := Boss{
-		People: People{175,1},
+		People: People{Length: 175, Sex: 1},
 		Title:  Title{1},
 	}
-	fmt.Printf("mytype %s\n",boss.String())
+	boss.weight = 1
+
+	fmt.Printf("mytype %s\n", boss.String())
 }
