@@ -6,12 +6,14 @@ import (
 	"lession/myarray"
 	"lession/mychan"
 	"lession/myconcurence"
+	"lession/myerror"
 	"lession/myfunc"
 	"lession/myhttp"
 	"lession/mymap"
 	"lession/myslice"
 	"lession/mysort"
 	"lession/mysrclib"
+	"lession/myswitch"
 	"lession/mytype"
 	"runtime"
 	"time"
@@ -47,6 +49,7 @@ func main() {
 	myslice.MyMutiSlice()
 	myslice.TestMyFuncSlice()
 	myslice.MySliceMemMyInfo()
+	myslice.MySliceRangeSum()
 
 	fmt.Println("映射测试专用----------------------------------->>>>>>>>>>>")
 	mymap.MyMapInit()
@@ -90,8 +93,15 @@ func main() {
 
 	fmt.Println("sort使用测试专用-------------------------------------->>>>>>>>>>>")
 	mysort.MySort()
+
 	fmt.Println("func使用测试专用-------------------------------------->>>>>>>>>>>")
 	myfunc.Testfunc()
+
+	fmt.Println("switch使用测试专用-------------------------------------->>>>>>>>>>>")
+	myswitch.MySwitchTest()
+
+	fmt.Println("error使用测试专用-------------------------------------->>>>>>>>>>>")
+	myerror.MyErrorTest()
 }
 
 func durationTotal(begin int64) {
