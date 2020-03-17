@@ -10,6 +10,7 @@ import (
 	"lession/myfunc"
 	"lession/myhttp"
 	"lession/mymap"
+	"lession/myrecover"
 	"lession/myslice"
 	"lession/mysort"
 	"lession/mysrclib"
@@ -102,6 +103,9 @@ func main() {
 
 	fmt.Println("error使用测试专用-------------------------------------->>>>>>>>>>>")
 	myerror.MyErrorTest()
+
+	fmt.Println("recover使用测试专用-------------------------------------->>>>>>>>>>>")
+	myrecover.MyRecoverTest()
 }
 
 func durationTotal(begin int64) {
