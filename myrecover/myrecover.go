@@ -8,9 +8,7 @@ package myrecover
 	这里的最外层函数指的是go函数，对于主 goroutine 来说就是main函数。但是控制权也不会停留在那里，而是被 Go 语言运行时系统收回。随后，程序崩溃并终止运行，承载程序这次运行的进程也会随之死亡并消失。与此同时，在这个控制权传播的过程中，panic 详情会被逐渐地积累和完善，并会在程序终止之前被打印出来。
 问题二：
 对于fmt包下的各种打印函数来说，error类型值的Error方法与其他类型值的String方法是等价的，它们的唯一结果都是string类型的。
- */
-
-
+*/
 
 import (
 	"errors"
@@ -24,7 +22,7 @@ func init() {
 
 func MyRecoverTest() {
 	fmt.Println("myrecover Enter function main.")
-	defer func(){
+	defer func() {
 		fmt.Println("myrecover Enter defer function.")
 		if p := recover(); p != nil {
 			fmt.Printf("myrecover panic: %s\n", p)
