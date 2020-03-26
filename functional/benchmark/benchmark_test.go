@@ -7,6 +7,18 @@ import (
 )
 
 /*
+基础测试
+*/
+func TestHello(t *testing.T) {
+	path := "./log/"
+	file := "hello.log"
+
+	reName := tools.RenameFile(file, tools.GetFileDateName_Day)
+
+	fmt.Sprintf("Rename file,str=%s\n", path+reName)
+}
+
+/*
 基准测试辅助函数
 */
 func RenameFileTest() {
