@@ -10,6 +10,7 @@ import (
 	"lession/myfunc"
 	"lession/myhttp"
 	"lession/mymap"
+	"lession/mymutex"
 	"lession/myrecover"
 	"lession/myslice"
 	"lession/mysort"
@@ -106,6 +107,11 @@ func main() {
 
 	fmt.Println("recover使用测试专用-------------------------------------->>>>>>>>>>>")
 	myrecover.MyRecoverTest()
+
+	fmt.Println("mutex使用测试专用-------------------------------------->>>>>>>>>>>")
+	mymutex.TestMyCond()
+
+	mymutex.WG.Wait()
 }
 
 func durationTotal(begin int64) {

@@ -1,6 +1,10 @@
 package mymutex
 
-import ()
+import (
+	"fmt"
+	"sync"
+	"time"
+)
 
 /*
 条件变量的作用？
@@ -12,10 +16,53 @@ import ()
 	条件变量提供的方法有三个：等待通知（wait）、单发通知（signal）和广播通知（broadcast）。
 */
 
-func Test() {
+var mailbox uint8
+var lock sync.RWMutex
+var sendCond *sync.Cond = nil
+var recvCond *sync.Cond = nil
 
-	//var mailbox uint8
-	//var lock sync.RWMutex
-	//sendCond := sync.NewCond(&lock)
-	//recvCond := sync.NewCond(lock.RLocker())
+var WG sync.WaitGroup
+
+func init() {
+	fmt.Println("---------welcome mycond init----------")
+	sendCond = sync.NewCond(&lock)
+	recvCond = sync.NewCond(lock.RLocker())
+}
+
+func SendFunc() {
+	defer WG.Done()
+	lock.Lock()
+	fmt.Println("mycond SendFunc lock...")
+	for mailbox == 1 {
+		fmt.Println("mycond SendFunc wait...")
+		sendCond.Wait()
+	}
+	mailbox = 1
+	lock.Unlock()
+	fmt.Println("mycond SendFunc unlock...")
+	recvCond.Signal()
+	fmt.Println("mycond SendFunc recvCond Signal...")
+}
+
+func RecvFunc() {
+	defer WG.Done()
+	lock.RLock()
+	fmt.Println("mycond RecvFunc lock...")
+	for mailbox == 0 {
+		fmt.Println("mycond RecvFunc wait...")
+		recvCond.Wait()
+	}
+	mailbox = 0
+	lock.RUnlock()
+	fmt.Println("mycond RecvFunc unlock...")
+	sendCond.Signal()
+	fmt.Println("mycond RecvFunc sendCond Signal...")
+}
+
+func TestMyCond() {
+	fmt.Println("---------mycond TestMyCond----------")
+	WG.Add(2)
+	go RecvFunc()
+	time.Sleep(500 * time.Millisecond)
+	go SendFunc()
 }
