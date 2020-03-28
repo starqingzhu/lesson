@@ -29,40 +29,53 @@ func init() {
 	recvCond = sync.NewCond(lock.RLocker())
 }
 
-func SendFunc() {
+func SendFunc(num int) {
 	defer WG.Done()
-	lock.Lock()
-	fmt.Println("mycond SendFunc lock...")
-	for mailbox == 1 {
-		fmt.Println("mycond SendFunc wait...")
-		sendCond.Wait()
+
+	for i := 0; i < num; i++ {
+		lock.Lock()
+		fmt.Println("mycond SendFunc lock...")
+		for mailbox == 1 {
+			fmt.Println("mycond SendFunc wait...", num)
+			sendCond.Wait()
+		}
+		mailbox = 1
+		lock.Unlock()
+		fmt.Println("mycond SendFunc unlock...")
+		recvCond.Broadcast()
+		//recvCond.Signal()
+		fmt.Println("mycond SendFunc recvCond Broadcast...")
 	}
-	mailbox = 1
-	lock.Unlock()
-	fmt.Println("mycond SendFunc unlock...")
-	recvCond.Signal()
-	fmt.Println("mycond SendFunc recvCond Signal...")
+
 }
 
-func RecvFunc() {
+func RecvFunc(goNum int) {
 	defer WG.Done()
+	WG.Add(1)
 	lock.RLock()
-	fmt.Println("mycond RecvFunc lock...")
+	fmt.Println("mycond RecvFunc lock...", goNum)
 	for mailbox == 0 {
-		fmt.Println("mycond RecvFunc wait...")
+		fmt.Println("mycond RecvFunc wait...", goNum)
 		recvCond.Wait()
 	}
 	mailbox = 0
 	lock.RUnlock()
-	fmt.Println("mycond RecvFunc unlock...")
+	fmt.Println("mycond RecvFunc unlock...", goNum)
 	sendCond.Signal()
-	fmt.Println("mycond RecvFunc sendCond Signal...")
+	fmt.Println("mycond RecvFunc sendCond Signal...", goNum)
+}
+
+func RecvFuncArr(arrLen int) {
+	for i := 0; i < arrLen; i++ {
+		go RecvFunc(i)
+	}
 }
 
 func TestMyCond() {
+	const num = 4
 	fmt.Println("---------mycond TestMyCond----------")
-	WG.Add(2)
-	go RecvFunc()
+	WG.Add(1)
+	RecvFuncArr(num)
 	time.Sleep(500 * time.Millisecond)
-	go SendFunc()
+	go SendFunc(num)
 }
