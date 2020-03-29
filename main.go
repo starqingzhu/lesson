@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"lession/hello"
 	"lession/myarray"
+	"lession/myatomic"
 	"lession/mychan"
 	"lession/myconcurence"
 	"lession/myerror"
@@ -15,6 +16,7 @@ import (
 	"lession/myslice"
 	"lession/mysort"
 	"lession/mysrclib"
+	"lession/mystring"
 	"lession/myswitch"
 	"lession/mytype"
 	"runtime"
@@ -110,8 +112,14 @@ func main() {
 
 	fmt.Println("mutex使用测试专用-------------------------------------->>>>>>>>>>>")
 	mymutex.TestMyCond()
-
 	mymutex.WG.Wait()
+
+	fmt.Println("atomic使用测试专用-------------------------------------->>>>>>>>>>>")
+	myatomic.TestMyAtomic()
+
+	fmt.Println("strings使用测试专用-------------------------------------->>>>>>>>>>>")
+	mystring.TestMystring()
+
 }
 
 func durationTotal(begin int64) {
