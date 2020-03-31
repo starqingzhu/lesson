@@ -74,6 +74,7 @@ func main() {
 	testPrivateValue()
 	testPrivateInsertion()
 	mytype.TestInsert2()
+	mytype.TestConv()
 
 	fmt.Println("协程测试专用-------------------------------------->>>>>>>>>>>")
 	myconcurence.TestMyGoroutine()

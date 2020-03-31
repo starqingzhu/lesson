@@ -2,6 +2,7 @@ package mytype
 
 import (
 	"fmt"
+	"reflect"
 )
 
 /*
@@ -248,4 +249,11 @@ func TestInsert2() {
 	boss.weight = 1
 
 	fmt.Printf("mytype %s\n", boss.String())
+}
+
+func TestConv() {
+	var f1 float64 = 10
+	f2 := int64(f1)
+
+	fmt.Printf("mytype f1 type:%v value:%f f2 type:%v value:%d\n", reflect.TypeOf(f1), f1, reflect.TypeOf(f2), f2)
 }
