@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	mylog "lession/3rd/log"
 	"lession/hello"
 	"lession/myarray"
 	"lession/myatomic"
@@ -12,6 +13,7 @@ import (
 	"lession/myhttp"
 	"lession/mymap"
 	"lession/mymutex"
+	"lession/mypool"
 	"lession/myrecover"
 	"lession/myslice"
 	"lession/mysort"
@@ -54,6 +56,7 @@ func main() {
 	myslice.TestMyFuncSlice()
 	myslice.MySliceMemMyInfo()
 	myslice.MySliceRangeSum()
+	myslice.MySliceChild()
 
 	fmt.Println("映射测试专用----------------------------------->>>>>>>>>>>")
 	mymap.MyMapInit()
@@ -86,8 +89,8 @@ func main() {
 	fmt.Println("标准库使用测试专用-------------------------------------->>>>>>>>>>>")
 	mysrclib.TestLogFmt()
 	mysrclib.TestMylogger()
-	mysrclib.TestJsonDecodePerson()
-	mysrclib.TestJsonEncodePerson()
+	//mysrclib.TestJsonDecodePerson()
+	//mysrclib.TestJsonEncodePerson()
 	mysrclib.TestMyIo()
 
 	fmt.Println("http库使用测试专用-------------------------------------->>>>>>>>>>>")
@@ -120,7 +123,15 @@ func main() {
 
 	fmt.Println("strings使用测试专用-------------------------------------->>>>>>>>>>>")
 	mystring.TestMystring()
+	mystring.TestMystringParse()
+	mystring.TestMystring2Byte()
+	mystring.TestMystring3()
 
+	fmt.Println("mypool使用测试专用-------------------------------------->>>>>>>>>>>")
+	mypool.TestMyPool()
+
+	fmt.Println("mylog使用测试专用-------------------------------------->>>>>>>>>>>")
+	mylog.TestLogRus()
 }
 
 func durationTotal(begin int64) {

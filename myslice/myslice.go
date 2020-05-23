@@ -145,3 +145,12 @@ func MySliceRangeSum() {
 
 	fmt.Printf("myslice MySliceRangeSum after: %v\n", sl1)
 }
+
+func MySliceChild(){
+	fmt.Println("---------func myslice MySliceChild ----------")
+	sl1 := []int64{1,2,3,4}
+	fmt.Printf("myslice len:%d cap:%d sl1:%v\n",len(sl1), cap(sl1),sl1)
+	sl2:= sl1[1:len(sl1)]
+	fmt.Printf("myslice len:%d cap:%d sl2:%v\n",len(sl2), cap(sl2),sl2)
+
+}
