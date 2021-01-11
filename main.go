@@ -4,12 +4,10 @@ import (
 	"fmt"
 	"lession/hello"
 	"lession/myarray"
-	"lession/mychan"
-	"lession/myconcurence"
 	"lession/myerror"
 	"lession/myfunc"
-	"lession/myhttp"
 	"lession/mymap"
+	"lession/myrandom"
 	"lession/myrecover"
 	"lession/myslice"
 	"lession/mysort"
@@ -61,23 +59,23 @@ func main() {
 	mymap.TestMyMapFunc()
 	mymap.TestMapCap()
 
-	fmt.Println("语言类型测试专用----------------------------------->>>>>>>>>>>")
-	mytype.Init()
-	mytype.Func()
-	mytype.TestInterfaceNotify()
-	mytype.TestMutiInterfaceNotify()
-	mytype.TestInsertion()
-	mytype.TestInsertionFloat()
-	testPrivateValue()
-	testPrivateInsertion()
-	mytype.TestInsert2()
+	//fmt.Println("语言类型测试专用----------------------------------->>>>>>>>>>>")
+	//mytype.Init()
+	//mytype.Func()
+	//mytype.TestInterfaceNotify()
+	//mytype.TestMutiInterfaceNotify()
+	//mytype.TestInsertion()
+	//mytype.TestInsertionFloat()
+	//testPrivateValue()
+	//testPrivateInsertion()
+	//mytype.TestInsert2()
 
-	fmt.Println("协程测试专用-------------------------------------->>>>>>>>>>>")
-	myconcurence.TestMyGoroutine()
-	myconcurence.TestMyGoroutineAtomic()
-	myconcurence.TestMyGoroutineMutex()
-	myconcurence.TestMyGoroutineChan()
-	myconcurence.TestRunner()
+	//fmt.Println("协程测试专用-------------------------------------->>>>>>>>>>>")
+	//myconcurence.TestMyGoroutine()
+	//myconcurence.TestMyGoroutineAtomic()
+	//myconcurence.TestMyGoroutineMutex()
+	//myconcurence.TestMyGoroutineChan()
+	//myconcurence.TestRunner()
 
 	fmt.Println("标准库使用测试专用-------------------------------------->>>>>>>>>>>")
 	mysrclib.TestLogFmt()
@@ -86,11 +84,11 @@ func main() {
 	mysrclib.TestJsonEncodePerson()
 	mysrclib.TestMyIo()
 
-	fmt.Println("http库使用测试专用-------------------------------------->>>>>>>>>>>")
-	myhttp.TestMyHttp()
+	//fmt.Println("http库使用测试专用-------------------------------------->>>>>>>>>>>")
+	//myhttp.TestMyHttp()
 
-	fmt.Println("chan使用测试专用-------------------------------------->>>>>>>>>>>")
-	mychan.TestBufChan()
+	//fmt.Println("chan使用测试专用-------------------------------------->>>>>>>>>>>")
+	//mychan.TestBufChan()
 
 	fmt.Println("sort使用测试专用-------------------------------------->>>>>>>>>>>")
 	mysort.MySort()
@@ -106,6 +104,13 @@ func main() {
 
 	fmt.Println("recover使用测试专用-------------------------------------->>>>>>>>>>>")
 	myrecover.MyRecoverTest()
+
+	//fmt.Println("mylog使用测试专用-------------------------------------->>>>>>>>>>>")
+	//mylog.TestMylog()
+
+	fmt.Println("myrandom 使用测试专用-------------------------------------->>>>>>>>>>>")
+	myrandom.TestRandom()
+
 }
 
 func durationTotal(begin int64) {

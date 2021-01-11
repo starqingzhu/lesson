@@ -26,7 +26,8 @@ func MyMapInit() {
 	mp1 := map[string]int{"1": 1, "2": 2, "3": 3}
 	fmt.Printf("mp1->:%+v	len:%d\n", mp1, len(mp1))
 
-	mp2 := make(map[string]int, 10)
+	mp2 := make(map[string]int)
+	mp2["xxx"] = 1
 	fmt.Printf("mp2->:%+v	len:%d\n", mp2, len(mp2))
 
 	mp3 := map[string]int{}

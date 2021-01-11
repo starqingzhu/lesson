@@ -61,7 +61,7 @@ func MySort() {
 	}
 	fmt.Println("--------------sort before -------------")
 	for index, node := range electedNodes {
-		fmt.Printf("index:%d node:%+v\n", index, node)
+		fmt.Printf("sort index:%d node:%+v\n", index, node)
 	}
 
 	//比较函数
@@ -71,7 +71,7 @@ func MySort() {
 	fmt.Println("--------------sort before -------------")
 	By(rate).Sort(electedNodes)
 	for index, node := range electedNodes {
-		fmt.Printf("index:%d node:%+v\n", index, node)
+		fmt.Printf("sort index:%d node:%+v\n", index, node)
 	}
 	fmt.Println("--------------sort end--- -------------")
 }
