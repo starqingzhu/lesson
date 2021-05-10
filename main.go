@@ -6,7 +6,10 @@ import (
 	"lession/myarray"
 	"lession/myerror"
 	"lession/myfunc"
+	"lession/myhttp"
 	"lession/mymap"
+	"lession/mynet"
+	"lession/myorder"
 	"lession/myrandom"
 	"lession/myrecover"
 	"lession/myslice"
@@ -29,6 +32,9 @@ func init() {
 func main() {
 	defer durationTotal(time.Now().UnixNano())
 	runtime.GOMAXPROCS(MAX_PROC)
+
+	fmt.Println("mynet测试专用----------------------------------->>>>>>>>>>>")
+	mynet.GetPublicNetAddrTest()
 
 	fmt.Println("hello测试专用----------------------------------->>>>>>>>>>>")
 	hello.PrintHello()
@@ -110,6 +116,12 @@ func main() {
 
 	fmt.Println("myrandom 使用测试专用-------------------------------------->>>>>>>>>>>")
 	myrandom.TestRandom()
+
+	fmt.Println("OrderIdTest 使用测试专用-------------------------------------->>>>>>>>>>>")
+	myorder.GetOrderIdTest()
+
+	fmt.Println("myhttp 使用测试专用-------------------------------------->>>>>>>>>>>")
+	myhttp.TestMyAddrHttp()
 
 }
 
