@@ -2,6 +2,7 @@ package localcache
 
 import (
 	"github.com/coocood/freecache"
+	"runtime/debug"
 )
 
 const (
@@ -10,4 +11,5 @@ const (
 
 func InitLocalCache() {
 	freecache.NewCache(CACHE_SIZE)
+	debug.SetGCPercent(40)
 }
