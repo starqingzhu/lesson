@@ -2,7 +2,7 @@ package benchmark
 
 import (
 	"fmt"
-	tools "lession/tools/mytime"
+	tools "lesson/tools/mytime"
 	"testing"
 )
 
