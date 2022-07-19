@@ -1,6 +1,6 @@
-module lesson
+module lession
 
-go 1.15
+go 1.18
 
 require (
 	github.com/chilts/sid v0.0.0-20190607042430-660e94789ec9

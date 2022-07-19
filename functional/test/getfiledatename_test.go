@@ -18,7 +18,6 @@ go test -v -test.run 测试函数名
 */
 
 import (
-	"lesson/tools/mytime"
 	"os"
 	"testing"
 )

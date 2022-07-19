@@ -4,8 +4,8 @@ import (
 	"fmt"
 	"io"
 	"io/ioutil"
-	"lesson/mysrclib"
-	tools "lesson/tools/mytime"
+	"lession/mysrclib"
+	tools "lession/tools/mytime"
 	"net/http"
 	"os"
 )
@@ -55,7 +55,7 @@ func TestMyAddrHttp() {
 	defer resp.Body.Close()
 	fmt.Printf("myhttp req %s\n", addr)
 	body, err := ioutil.ReadAll(resp.Body)
-	fmt.Printf("myhttp res body:%s\n",body)
+	fmt.Printf("myhttp res body:%s\n", body)
 	fmt.Println(resp.StatusCode)
 	if resp.StatusCode == 200 {
 		fmt.Println("myhttp ok")

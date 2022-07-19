@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"io"
 	"io/ioutil"
-	tools "lesson/tools/mytime"
+	tools "lession/tools/mytime"
 	"log"
 	"os"
 )
