@@ -2,14 +2,13 @@ package main
 
 import (
 	"fmt"
-	"lession/myfunc"
-	"lession/myinterface"
+	"lession/mychan"
 	"runtime"
 	"time"
 )
 
 const (
-	MAX_PROC = 1
+	MAX_PROC = 2
 )
 
 func init() {
@@ -18,13 +17,30 @@ func init() {
 
 func main() {
 	defer durationTotal(time.Now().UnixNano())
-	runtime.GOMAXPROCS(MAX_PROC)
+	ret := runtime.GOMAXPROCS(MAX_PROC)
+	fmt.Println("ret", ret)
 
-	myinterface.PrintInterfaceType()
-	myinterface.PrintSInterface()
+	//mychan.PrintMyLockCount()
+	mychan.PrintSelect()
 
-	myfunc.PrintComParam()
-	myfunc.PrintConCat()
+	//go dead.DeadLoop2()
+	//go dead.DeadLoop()
+	//for {
+	//	time.Sleep(time.Second * 1)
+	//	fmt.Println("I got scheduled!")
+	//}
+
+	//myinterface.PrintInterfaceType()
+	//myinterface.PrintSInterface()
+	//myinterface.PrintNilInterface()
+	//myinterface.PrintEmptyInterface()
+	//myinterface.PrintNotEmptyInterface()
+	//myinterface.PrintInterfaceInterDetail()
+	//myinterface.PrintInterfaceInterCombination()
+	//myinterface.PrintInterfaceHandler()
+	//
+	//myfunc.PrintComParam()
+	//myfunc.PrintConCat()
 
 	//fmt.Println("mynet测试专用----------------------------------->>>>>>>>>>>")
 	//mynet.GetPublicNetAddrTest()
