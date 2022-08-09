@@ -1,10 +1,19 @@
-package myrandom_test
+package myrandom
 
 import (
-	"lession/myrandom"
+	"fmt"
 	"testing"
 )
 
 func TestRandom(t *testing.T) {
-	myrandom.PrintRandom()
+	t.Parallel()
+	PrintRandom()
+}
+
+func BenchmarkPrintRandom(b *testing.B) {
+	b.RunParallel(func(pb *testing.PB) {
+		for pb.Next() {
+			fmt.Println("xxxx")
+		}
+	})
 }

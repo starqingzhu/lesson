@@ -2,7 +2,7 @@ package main
 
 import (
 	"fmt"
-	"lession/mychan"
+	"lession/myreflect"
 	"runtime"
 	"time"
 )
@@ -20,8 +20,15 @@ func main() {
 	ret := runtime.GOMAXPROCS(MAX_PROC)
 	fmt.Println("ret", ret)
 
+	//go server.ServerInit(":8081")
+	//server.ServerHttpInit()
+	//time.Sleep(10000 * time.Second)
+
+	myreflect.PrintReflect()
+	myreflect.PrintReflect2()
+
 	//mychan.PrintMyLockCount()
-	mychan.PrintSelect()
+	//mychan.PrintSelect()
 
 	//go dead.DeadLoop2()
 	//go dead.DeadLoop()

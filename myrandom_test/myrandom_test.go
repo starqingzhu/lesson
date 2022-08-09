@@ -5,6 +5,6 @@ import (
 	"testing"
 )
 
-func TestRandom(t *testing.T) {
+func TestRandomx(t *testing.T) {
 	myrandom.PrintRandom()
 }
