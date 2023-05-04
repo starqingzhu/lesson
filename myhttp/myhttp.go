@@ -4,8 +4,8 @@ import (
 	"fmt"
 	"io"
 	"io/ioutil"
-	"lession/mysrclib"
-	tools "lession/tools/mytime"
+	"lesson/mysrclib"
+	tools "lesson/tools/mytime"
 	"net/http"
 	"os"
 )

@@ -4,7 +4,6 @@ import (
 	"bytes"
 	"errors"
 	"fmt"
-	"lession/log"
 	"reflect"
 )
 
@@ -13,7 +12,7 @@ const (
 )
 
 func init() {
-	log.PrintInit(moduleName)
+	//log.PrintInit(moduleName)
 }
 
 func ConstructQueryStmt(obj interface{}) (stmt string, err error) {

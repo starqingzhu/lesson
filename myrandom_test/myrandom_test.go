@@ -1,7 +1,7 @@
 package myrandom_test
 
 import (
-	"lession/myrandom"
+	"lesson/myrandom"
 	"testing"
 )
 

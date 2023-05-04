@@ -2,7 +2,7 @@ package main
 
 import (
 	"fmt"
-	"lession/myreflect"
+	"lesson/myreflect"
 	"runtime"
 	"time"
 )
