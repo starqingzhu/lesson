@@ -2,7 +2,7 @@ package main
 
 import (
 	"fmt"
-	"lesson/myreflect"
+	"lesson/myfunc"
 	"runtime"
 	"time"
 )
@@ -24,8 +24,8 @@ func main() {
 	//server.ServerHttpInit()
 	//time.Sleep(10000 * time.Second)
 
-	myreflect.PrintReflect()
-	myreflect.PrintReflect2()
+	//myreflect.PrintReflect()
+	//myreflect.PrintReflect2()
 
 	//mychan.PrintMyLockCount()
 	//mychan.PrintSelect()
@@ -46,8 +46,9 @@ func main() {
 	//myinterface.PrintInterfaceInterCombination()
 	//myinterface.PrintInterfaceHandler()
 	//
-	//myfunc.PrintComParam()
-	//myfunc.PrintConCat()
+	myfunc.Testfunc()
+	myfunc.PrintComParam()
+	myfunc.PrintConCat()
 
 	//fmt.Println("mynet测试专用----------------------------------->>>>>>>>>>>")
 	//mynet.GetPublicNetAddrTest()

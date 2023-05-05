@@ -22,7 +22,7 @@ import (
 	"fmt"
 )
 
-//函数签名
+// 函数签名
 type (
 	Printer      func(contents string) (n int, err error)
 	Operate      func(x, y int) int
@@ -71,5 +71,9 @@ func Testfunc() {
 		return
 	}
 	fmt.Printf("func checkRes res %d\n", res)
+
+	for i := 0; i < 5; i++ {
+		defer fmt.Printf("func checkRes index:%d\n", i)
+	}
 
 }
