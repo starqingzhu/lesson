@@ -2,7 +2,7 @@ package main
 
 import (
 	"fmt"
-	"lesson/myfunc"
+	"lesson/mychan"
 	"runtime"
 	"time"
 )
@@ -28,7 +28,7 @@ func main() {
 	//myreflect.PrintReflect2()
 
 	//mychan.PrintMyLockCount()
-	//mychan.PrintSelect()
+	mychan.PrintSelect()
 
 	//go dead.DeadLoop2()
 	//go dead.DeadLoop()
@@ -46,9 +46,9 @@ func main() {
 	//myinterface.PrintInterfaceInterCombination()
 	//myinterface.PrintInterfaceHandler()
 	//
-	myfunc.Testfunc()
-	myfunc.PrintComParam()
-	myfunc.PrintConCat()
+	//myfunc.Testfunc()
+	//myfunc.PrintComParam()
+	//myfunc.PrintConCat()
 
 	//fmt.Println("mynet测试专用----------------------------------->>>>>>>>>>>")
 	//mynet.GetPublicNetAddrTest()
