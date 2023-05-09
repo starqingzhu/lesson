@@ -2,7 +2,7 @@ package main
 
 import (
 	"fmt"
-	"lesson/mychan"
+	"lesson/mypool"
 	"runtime"
 	"time"
 )
@@ -28,8 +28,10 @@ func main() {
 	//myreflect.PrintReflect2()
 
 	//mychan.PrintMyLockCount()
-	mychan.PrintSelect()
+	//mychan.PrintSelect()
 
+	//mycontext.TestcoordinateWithContext()
+	mypool.TestPool()
 	//go dead.DeadLoop2()
 	//go dead.DeadLoop()
 	//for {
