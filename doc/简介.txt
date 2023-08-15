@@ -1,0 +1,18 @@
+go语言适合做什么
+    使用c或者c++做的那些事情，用go来做很合适。
+    例如：处理日志、数据打包、虚拟机处理、文件系统等
+    分布式系统：数据库代理器等
+    网络：web应用、api应用、下载应用、内存数据库
+    云平台：google 开发的 groupcache，couchbase 的部分组件云平台，目前国外很多云平台在采用 Go 开发，CloudFoundry 的部分组件，前 VMware 的技术总监自己出来搞的 apcera 云平台。
+go成功的项目：
+    nsq：bitly 开源的消息队列系统，性能非常高，目前他们每天处理数十亿条的消息
+    docker：基于 lxc 的一个虚拟打包工具，能够实现 PAAS 平台的组建
+    packer：用来生成不同平台的镜像文件，例如 VM、vbox、AWS 等，作者是 vagrant 的作者
+    skynet：分布式调度框架
+    Doozer：分布式同步工具，类似 ZooKeeper
+    Heka：mozilla 开源的日志处理系统
+    cbfs：couchbase 开源的分布式文件系统
+    tsuru：开源的 PAAS 平台，和 SAE 实现的功能一模一样
+    groupcache：memcache 作者写的用于 Google 下载系统的缓存系统
+    god：类似 redis 的缓存系统，但是支持分布式和扩展性
+    gor：网络流量抓包和重放工具

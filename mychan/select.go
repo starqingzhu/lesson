@@ -18,6 +18,20 @@ import (
 
 总之，select和chan是Go语言中非常重要的并发特性，能够极大地提高程序的并发性能和可维护性。虽然这些特性在使用时有一定的复杂性和注意事项，但只要正确使用，并遵循一些设计原则和最佳实践，就可以有效地应对多种场景和需求。
 */
+/*
+select 使用规则：
+1.如果没有default分支,select会阻塞在多个channel上，对多个channel的读/写事件进行监控。
+2.如果有一个或多个IO操作可以完成，则Go运行时系统会随机的选择一个执行，否则的话，如果有default分支，则执行default分支语句，如果连default都没有，则select语句会一直阻塞，直到至少有一个IO操作可以进行。
+
+//select基本用法
+select {
+case <- chan1:
+// 如果chan1成功读到数据，则进行该case处理语句
+case chan2 <- 1:
+// 如果成功向chan2写入数据，则进行该case处理语句
+default:
+// 如果上面都没有成功，则进入default处理流程
+*/
 
 func PrintSelect() {
 	c1, c2 := make(chan int), make(chan int)
