@@ -31,6 +31,12 @@ case chan2 <- 1:
 // 如果成功向chan2写入数据，则进行该case处理语句
 default:
 // 如果上面都没有成功，则进入default处理流程
+
+
+func main() {
+	select {}
+}
+上述示例，对于空的select语句，程序会被阻塞，准确的说当前协程被阻塞。同事golang自带死锁检测机制，当发现当前协程再也没有机会被唤醒时，则会panic。所以上述程序会panic。
 */
 
 func PrintSelect() {
