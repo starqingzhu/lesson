@@ -41,7 +41,8 @@ func coordinateWithContext() {
 
 func TestcoordinateWithContext() {
 	//coordinateWithContext()
-	ctx := context.Background()
+	//ctx := context.Background()
+	ctx := context.TODO()
 	ctx = context.WithValue(ctx, "key1", "0001")
 	ctx = context.WithValue(ctx, "key2", "0002")
 	ctx = context.WithValue(ctx, "key3", "0003")
