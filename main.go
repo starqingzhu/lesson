@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 	"lesson/mypool"
+	"lesson/mypprof"
 	"runtime"
 	"time"
 )
@@ -141,6 +142,8 @@ func main() {
 	//
 	//fmt.Println("myhttp 使用测试专用-------------------------------------->>>>>>>>>>>")
 	//myhttp.TestMyAddrHttp()
+
+	mypprof.CreateProfileFile()
 
 }
 
