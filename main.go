@@ -2,10 +2,11 @@ package main
 
 import (
 	"fmt"
-	"lesson/mypool"
-	"lesson/mypprof"
-	"runtime"
+	// "lesson/mypool"
+	// "lesson/mypprof"
+	// "runtime"
 	"time"
+	"lesson/mygnet"
 )
 
 const (
@@ -17,9 +18,11 @@ func init() {
 }
 
 func main() {
-	defer durationTotal(time.Now().UnixNano())
-	ret := runtime.GOMAXPROCS(MAX_PROC)
-	fmt.Println("ret", ret)
+	// defer durationTotal(time.Now().UnixNano())
+	// ret := runtime.GOMAXPROCS(MAX_PROC)
+	// fmt.Println("ret", ret)
+
+	mygnet.Init()
 
 	//go server.ServerInit(":8081")
 	//server.ServerHttpInit()
@@ -32,7 +35,7 @@ func main() {
 	//mychan.PrintSelect()
 
 	//mycontext.TestcoordinateWithContext()
-	mypool.TestPool()
+	// mypool.TestPool()
 	//go dead.DeadLoop2()
 	//go dead.DeadLoop()
 	//for {
@@ -143,7 +146,7 @@ func main() {
 	//fmt.Println("myhttp 使用测试专用-------------------------------------->>>>>>>>>>>")
 	//myhttp.TestMyAddrHttp()
 
-	mypprof.CreateProfileFile()
+	// mypprof.CreateProfileFile()
 
 }
 
