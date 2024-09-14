@@ -24,7 +24,7 @@ func main() {
 
 	mygnet.Init()
 
-	//go server.ServerInit(":8081")
+	// go server.ServerInit(":8081")
 	//server.ServerHttpInit()
 	//time.Sleep(10000 * time.Second)
 
