@@ -30,3 +30,21 @@ func printTest(arr *[3]int) {
 		fmt.Println((arr[i]))
 	}
 }
+
+func func1() {
+	fmt.Println("A")
+}
+
+func func2() {
+	fmt.Println("B")
+}
+
+func func3() {
+	fmt.Println("C")
+}
+
+func TestDefer() {
+	defer func1()
+	defer func2()
+	defer func3()
+}

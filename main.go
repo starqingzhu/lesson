@@ -2,11 +2,8 @@ package main
 
 import (
 	"fmt"
-	// "lesson/mypool"
-	// "lesson/mypprof"
-	// "runtime"
+	"lesson/mydefer"
 	"time"
-	"lesson/mygnet"
 )
 
 const (
@@ -22,7 +19,9 @@ func main() {
 	// ret := runtime.GOMAXPROCS(MAX_PROC)
 	// fmt.Println("ret", ret)
 
-	mygnet.Init()
+	mydefer.TestDefer()
+
+	//mygnet.Init()
 
 	// go server.ServerInit(":8081")
 	//server.ServerHttpInit()
@@ -79,7 +78,8 @@ func main() {
 	//myslice.MySliceMemMyInfo()
 	//myslice.MySliceRangeSum()
 	//
-	//fmt.Println("映射测试专用----------------------------------->>>>>>>>>>>")
+	// fmt.Println("映射测试专用----------------------------------->>>>>>>>>>>")
+	// mymap.Simple1()
 	//mymap.MyMapInit()
 	//mymap.MyMapSet()
 	//mymap.MyMapGet()
