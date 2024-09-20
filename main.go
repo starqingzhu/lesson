@@ -20,7 +20,6 @@ func main() {
 	// fmt.Println("ret", ret)
 
 	mydefer.TestDefer()
-
 	//mygnet.Init()
 
 	// go server.ServerInit(":8081")
