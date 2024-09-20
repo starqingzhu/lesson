@@ -18,7 +18,6 @@ func main() {
 	// defer durationTotal(time.Now().UnixNano())
 	// ret := runtime.GOMAXPROCS(MAX_PROC)
 	// fmt.Println("ret", ret)
-
 	mydefer.TestDefer()
 	//mygnet.Init()
 
