@@ -2,31 +2,12 @@ package main
 
 import (
 	"fmt"
-	mylog "lession/3rd/log"
-	"lession/hello"
-	"lession/myarray"
-	"lession/myatomic"
-	"lession/mychan"
-	"lession/myconcurence"
-	"lession/myerror"
-	"lession/myfunc"
-	"lession/myhttp"
-	"lession/mymap"
-	"lession/mymutex"
-	"lession/mypool"
-	"lession/myrecover"
-	"lession/myslice"
-	"lession/mysort"
-	"lession/mysrclib"
-	"lession/mystring"
-	"lession/myswitch"
-	"lession/mytype"
-	"runtime"
+	"lesson/mydefer"
 	"time"
 )
 
 const (
-	MAX_PROC = 1
+	MAX_PROC = 2
 )
 
 func init() {
@@ -34,104 +15,135 @@ func init() {
 }
 
 func main() {
-	defer durationTotal(time.Now().UnixNano())
-	runtime.GOMAXPROCS(MAX_PROC)
+	// defer durationTotal(time.Now().UnixNano())
+	// ret := runtime.GOMAXPROCS(MAX_PROC)
+	// fmt.Println("ret", ret)
+	mydefer.TestDefer()
+	//mygnet.Init()
+	// go server.ServerInit(":8081")
+	//server.ServerHttpInit()
+	//time.Sleep(10000 * time.Second)
+	//myreflect.PrintReflect()
+	//myreflect.PrintReflect2()
 
-	fmt.Println("hello测试专用----------------------------------->>>>>>>>>>>")
-	hello.PrintHello()
+	//mychan.PrintMyLockCount()
+	//mychan.PrintSelect()
 
-	fmt.Println("数组测试专用----------------------------------->>>>>>>>>>>")
-	myarray.MyArrInit()
-	myarray.MyArrSet()
-	myarray.MyArrsSet()
-	myarray.MyMutiArr()
-	myarray.TestMyFuncArr()
+	//mycontext.TestcoordinateWithContext()
+	// mypool.TestPool()
+	//go dead.DeadLoop2()
+	//go dead.DeadLoop()
+	//for {
+	//	time.Sleep(time.Second * 1)
+	//	fmt.Println("I got scheduled!")
+	//}
 
-	fmt.Println("切片测试专用----------------------------------->>>>>>>>>>>")
-	myslice.MySliceInit()
-	myslice.MySliceSet()
-	myslice.MySliceAppend()
-	myslice.MySliceRange()
-	myslice.MyMutiSlice()
-	myslice.TestMyFuncSlice()
-	myslice.MySliceMemMyInfo()
-	myslice.MySliceRangeSum()
-	myslice.MySliceChild()
+	//myinterface.PrintInterfaceType()
+	//myinterface.PrintSInterface()
+	//myinterface.PrintNilInterface()
+	//myinterface.PrintEmptyInterface()
+	//myinterface.PrintNotEmptyInterface()
+	//myinterface.PrintInterfaceInterDetail()
+	//myinterface.PrintInterfaceInterCombination()
+	//myinterface.PrintInterfaceHandler()
+	//
+	//myfunc.Testfunc()
+	//myfunc.PrintComParam()
+	//myfunc.PrintConCat()
 
-	fmt.Println("映射测试专用----------------------------------->>>>>>>>>>>")
-	mymap.MyMapInit()
-	mymap.MyMapSet()
-	mymap.MyMapGet()
-	mymap.MyMapRange()
-	mymap.MyMapDel()
-	mymap.TestMyMapFunc()
-	mymap.TestMapCap()
-
-	fmt.Println("语言类型测试专用----------------------------------->>>>>>>>>>>")
-	mytype.Init()
-	mytype.Func()
-	mytype.TestInterfaceNotify()
-	mytype.TestMutiInterfaceNotify()
-	mytype.TestInsertion()
-	mytype.TestInsertionFloat()
-	testPrivateValue()
-	testPrivateInsertion()
-	mytype.TestInsert2()
-	mytype.TestConv()
-
-	fmt.Println("协程测试专用-------------------------------------->>>>>>>>>>>")
-	myconcurence.TestMyGoroutine()
-	myconcurence.TestMyGoroutineAtomic()
-	myconcurence.TestMyGoroutineMutex()
-	myconcurence.TestMyGoroutineChan()
-	myconcurence.TestRunner()
-
-	fmt.Println("标准库使用测试专用-------------------------------------->>>>>>>>>>>")
-	mysrclib.TestLogFmt()
-	mysrclib.TestMylogger()
+	//fmt.Println("mynet测试专用----------------------------------->>>>>>>>>>>")
+	//mynet.GetPublicNetAddrTest()
+	//
+	//fmt.Println("hello测试专用----------------------------------->>>>>>>>>>>")
+	//hello.PrintHello()
+	//
+	//fmt.Println("数组测试专用----------------------------------->>>>>>>>>>>")
+	//myarray.MyArrInit()
+	//myarray.MyArrSet()
+	//myarray.MyArrsSet()
+	//myarray.MyMutiArr()
+	//myarray.TestMyFuncArr()
+	//
+	//fmt.Println("切片测试专用----------------------------------->>>>>>>>>>>")
+	//myslice.MySliceInit()
+	//myslice.MySliceSet()
+	//myslice.MySliceAppend()
+	//myslice.MySliceRange()
+	//myslice.MyMutiSlice()
+	//myslice.TestMyFuncSlice()
+	//myslice.MySliceMemMyInfo()
+	//myslice.MySliceRangeSum()
+	//
+	// fmt.Println("映射测试专用----------------------------------->>>>>>>>>>>")
+	// mymap.Simple1()
+	//mymap.MyMapInit()
+	//mymap.MyMapSet()
+	//mymap.MyMapGet()
+	//mymap.MyMapRange()
+	//mymap.MyMapDel()
+	//mymap.TestMyMapFunc()
+	//mymap.TestMapCap()
+	//
+	//fmt.Println("语言类型测试专用----------------------------------->>>>>>>>>>>")
+	//mytype.Init()
+	//mytype.Func()
+	//mytype.TestInterfaceNotify()
+	//mytype.TestMutiInterfaceNotify()
+	//mytype.TestInsertion()
+	//mytype.TestInsertionFloat()
+	//testPrivateValue()
+	//testPrivateInsertion()
+	//mytype.TestInsert2()
+	//
+	//fmt.Println("协程测试专用-------------------------------------->>>>>>>>>>>")
+	//myconcurence.TestMyGoroutine()
+	//myconcurence.TestMyGoroutineAtomic()
+	//myconcurence.TestMyGoroutineMutex()
+	//myconcurence.TestMyGoroutineChan()
+	//myconcurence.TestRunner()
+	//
+	//fmt.Println("标准库使用测试专用-------------------------------------->>>>>>>>>>>")
+	//mysrclib.TestLogFmt()
+	//mysrclib.TestMylogger()
 	//mysrclib.TestJsonDecodePerson()
 	//mysrclib.TestJsonEncodePerson()
-	mysrclib.TestMyIo()
+	//mysrclib.TestMyIo()
+	//
+	//fmt.Println("http库使用测试专用-------------------------------------->>>>>>>>>>>")
+	//myhttp.TestMyHttp()
+	//
+	//fmt.Println("chan使用测试专用-------------------------------------->>>>>>>>>>>")
+	//mychan.TestBufChan()
+	//
+	//fmt.Println("sort使用测试专用-------------------------------------->>>>>>>>>>>")
+	//mysort.MySort()
+	//
+	//fmt.Println("func使用测试专用-------------------------------------->>>>>>>>>>>")
+	//myfunc.Testfunc()
+	//
+	//fmt.Println("switch使用测试专用-------------------------------------->>>>>>>>>>>")
+	//myswitch.MySwitchTest()
+	//
+	//fmt.Println("error使用测试专用-------------------------------------->>>>>>>>>>>")
+	//myerror.MyErrorTest()
+	//
+	//fmt.Println("recover使用测试专用-------------------------------------->>>>>>>>>>>")
+	//myrecover.MyRecoverTest()
+	//
+	////fmt.Println("mylog使用测试专用-------------------------------------->>>>>>>>>>>")
+	////mylog.TestMylog()
+	//
+	//fmt.Println("myrandom 使用测试专用-------------------------------------->>>>>>>>>>>")
+	//myrandom.TestRandom()
+	//
+	//fmt.Println("OrderIdTest 使用测试专用-------------------------------------->>>>>>>>>>>")
+	//myorder.GetOrderIdTest()
+	//
+	//fmt.Println("myhttp 使用测试专用-------------------------------------->>>>>>>>>>>")
+	//myhttp.TestMyAddrHttp()
 
-	fmt.Println("http库使用测试专用-------------------------------------->>>>>>>>>>>")
-	myhttp.TestMyHttp()
+	// mypprof.CreateProfileFile()
 
-	fmt.Println("chan使用测试专用-------------------------------------->>>>>>>>>>>")
-	mychan.TestBufChan()
-
-	fmt.Println("sort使用测试专用-------------------------------------->>>>>>>>>>>")
-	mysort.MySort()
-
-	fmt.Println("func使用测试专用-------------------------------------->>>>>>>>>>>")
-	myfunc.Testfunc()
-
-	fmt.Println("switch使用测试专用-------------------------------------->>>>>>>>>>>")
-	myswitch.MySwitchTest()
-
-	fmt.Println("error使用测试专用-------------------------------------->>>>>>>>>>>")
-	myerror.MyErrorTest()
-
-	fmt.Println("recover使用测试专用-------------------------------------->>>>>>>>>>>")
-	myrecover.MyRecoverTest()
-
-	fmt.Println("mutex使用测试专用-------------------------------------->>>>>>>>>>>")
-	mymutex.TestMyCond()
-	mymutex.WG.Wait()
-
-	fmt.Println("atomic使用测试专用-------------------------------------->>>>>>>>>>>")
-	myatomic.TestMyAtomic()
-
-	fmt.Println("strings使用测试专用-------------------------------------->>>>>>>>>>>")
-	mystring.TestMystring()
-	mystring.TestMystringParse()
-	mystring.TestMystring2Byte()
-	mystring.TestMystring3()
-
-	fmt.Println("mypool使用测试专用-------------------------------------->>>>>>>>>>>")
-	mypool.TestMyPool()
-
-	fmt.Println("mylog使用测试专用-------------------------------------->>>>>>>>>>>")
-	mylog.TestLogRus()
 }
 
 func durationTotal(begin int64) {
@@ -142,23 +154,23 @@ func durationTotal(begin int64) {
 
 func testPrivateValue() {
 	fmt.Println("---------test private value----------")
-	counter := mytype.New(10)
-	fmt.Printf("counter:%d\n", counter)
+	//counter := mytype.New(10)
+	//fmt.Printf("counter:%d\n", counter)
 }
 
 func testPrivateInsertion() {
 	fmt.Println("---------test private insertion----------")
-	ad1 := mytype.Admin1{
-		Level: 0,
-	}
-	ad1.Name = "sunbin01"
-	//ad1.email = "starqingzhu@163.com" //未公开变量无法外部访问
-
-	ad2 := mytype.Admin2{
-		Level: 1,
-	}
-	ad2.Name = "sunbin02"
-	ad2.Email = "starqingzhu@163.com"
-
-	fmt.Printf("ad1:\n\t%+v\nad2:\n\t%+v\n", ad1, ad2)
+	//ad1 := mytype.Admin1{
+	//	Level: 0,
+	//}
+	//ad1.Name = "sunbin01"
+	////ad1.email = "starqingzhu@163.com" //未公开变量无法外部访问
+	//
+	//ad2 := mytype.Admin2{
+	//	Level: 1,
+	//}
+	//ad2.Name = "sunbin02"
+	//ad2.Email = "starqingzhu@163.com"
+	//
+	//fmt.Printf("ad1:\n\t%+v\nad2:\n\t%+v\n", ad1, ad2)
 }

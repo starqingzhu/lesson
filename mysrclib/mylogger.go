@@ -1,6 +1,10 @@
 package mysrclib
 
 import (
+	"fmt"
+	"io"
+	"io/ioutil"
+	tools "lesson/tools/mytime"
 	"log"
 )
 

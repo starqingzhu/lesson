@@ -165,6 +165,7 @@ func TestMutiInterfaceNotify() {
 	fmt.Printf("mytype IUser:\n%+v\nIAdmin:\n%+v\n", u, a)
 	sendNotification(&u)
 	sendNotification(&a)
+
 }
 
 func TestInsertion() {

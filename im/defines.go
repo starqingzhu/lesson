@@ -9,7 +9,7 @@ const (
 	Student = 4 //学生
 )
 
-//字体类
+// 字体类
 type (
 	ChatNode struct {
 		//聊天发送方
