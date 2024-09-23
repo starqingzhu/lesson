@@ -1,6 +1,7 @@
 package mypool
 
 import (
+	"bytes"
 	"fmt"
 	"sync"
 )
@@ -30,32 +31,46 @@ func init() {
 	fmt.Println("---------welcome mypool init----------")
 }
 
+type Student struct {
+	Name   string
+	Age    int32
+	Remark [1024]byte
+}
+
 func GetObjPool() sync.Pool {
 	return sync.Pool{
 		New: func() interface{} {
-			return new(int)
+			return new(Student)
 		},
 	}
 }
 
-func TestPool() {
-	strPool := &sync.Pool{
-		New: func() interface{} { return "" },
+func GetBuffPool() sync.Pool {
+	return sync.Pool{
+		New: func() interface{} {
+			return &bytes.Buffer{}
+		},
 	}
-
-	strPool.Put("Hello")
-	strPool.Put("World")
-
-	str := strPool.Get().(string)
-	fmt.Println(str)
-
-	str += ",Goland!"
-	strPool.Put(str)
-
-	str = strPool.Get().(string)
-	fmt.Println(str)
-
-	str = strPool.Get().(string)
-	fmt.Println(str)
-
 }
+
+// func TestPool() {
+// 	strPool := &sync.Pool{
+// 		New: func() interface{} { return "" },
+// 	}
+
+// 	strPool.Put("Hello")
+// 	strPool.Put("World")
+
+// 	str := strPool.Get().(string)
+// 	fmt.Println(str)
+
+// 	str += ",Goland!"
+// 	strPool.Put(str)
+
+// 	str = strPool.Get().(string)
+// 	fmt.Println(str)
+
+// 	str = strPool.Get().(string)
+// 	fmt.Println(str)
+
+// }
