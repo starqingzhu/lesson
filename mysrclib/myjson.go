@@ -3,6 +3,7 @@ package mysrclib
 import (
 	"encoding/json"
 	"fmt"
+	"lesson/mylog"
 )
 
 func init() {
@@ -27,10 +28,10 @@ func TestJsonDecodePerson() {
 	var person Person
 	err := json.Unmarshal([]byte(JPerson), &person)
 	if err != nil {
-		MyError.Printf("decode JPerson:%+v failed,err=%v\n", JPerson, err)
+		mylog.MyError.Printf("decode JPerson:%+v failed,err=%v\n", JPerson, err)
 		return
 	}
-	MyInfo.Printf("decode JPerson success,JPerson=%+v\n", person)
+	mylog.MyInfo.Printf("decode JPerson success,JPerson=%+v\n", person)
 }
 
 func TestJsonEncodePerson() {
@@ -43,9 +44,9 @@ func TestJsonEncodePerson() {
 	person, err := json.Marshal(JPerson)
 	//person,err := json.MarshalIndent(JPerson,"","	")
 	if err != nil {
-		MyError.Printf("JPerson:%+v,Encode err:%v\n", JPerson, err)
+		mylog.MyError.Printf("JPerson:%+v,Encode err:%v\n", JPerson, err)
 		return
 	}
-	MyInfo.Printf("encode JPerson success,JPerson=%+v\n", string(person))
+	mylog.MyInfo.Printf("encode JPerson success,JPerson=%+v\n", string(person))
 
 }
