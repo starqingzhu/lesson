@@ -6,7 +6,7 @@ import (
 	"net/rpc"
 )
 
-func main() {
+func main2() {
 	client, err := rpc.Dial("tcp", "localhost:1234")
 	if err != nil {
 		log.Fatal("dialing:", err)
