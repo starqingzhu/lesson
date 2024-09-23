@@ -2,7 +2,6 @@ package main
 
 import (
 	"fmt"
-	"lesson/mychan"
 	"time"
 )
 
@@ -27,7 +26,7 @@ func main() {
 	//myreflect.PrintReflect2()
 
 	//mychan.PrintMyLockCount()
-	mychan.PrintSelect()
+	// mychan.PrintSelect()
 
 	//mycontext.TestcoordinateWithContext()
 	// mypool.TestPool()
