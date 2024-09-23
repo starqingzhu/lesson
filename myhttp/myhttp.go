@@ -2,12 +2,8 @@ package myhttp
 
 import (
 	"fmt"
-	"io"
 	"io/ioutil"
-	"lesson/mysrclib"
-	tools "lesson/tools/mytime"
 	"net/http"
-	"os"
 )
 
 func init() {

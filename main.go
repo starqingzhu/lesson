@@ -2,7 +2,7 @@ package main
 
 import (
 	"fmt"
-	"lesson/mydefer"
+	"lesson/mychan"
 	"time"
 )
 
@@ -18,7 +18,7 @@ func main() {
 	// defer durationTotal(time.Now().UnixNano())
 	// ret := runtime.GOMAXPROCS(MAX_PROC)
 	// fmt.Println("ret", ret)
-	mydefer.TestDefer()
+	// mydefer.TestDefer()
 	//mygnet.Init()
 	// go server.ServerInit(":8081")
 	//server.ServerHttpInit()
@@ -27,7 +27,7 @@ func main() {
 	//myreflect.PrintReflect2()
 
 	//mychan.PrintMyLockCount()
-	//mychan.PrintSelect()
+	mychan.PrintSelect()
 
 	//mycontext.TestcoordinateWithContext()
 	// mypool.TestPool()

@@ -2,9 +2,10 @@ package mylog
 
 import (
 	"fmt"
-	"github.com/sirupsen/logrus"
-	"lession/tools/tools"
+	"lesson/tools/tools"
 	"os"
+
+	"github.com/sirupsen/logrus"
 )
 
 var logger = logrus.New()
@@ -19,7 +20,7 @@ func init() {
 	logger.Out = os.Stdout
 }
 
-func TestLogRus(){
+func TestLogRus() {
 	logrus.Info("mylog logrus hello, world.")
 	logrus.Info("mylog logrus hello, world.")
 	logrus.Info("mylog logrus hello, world.")
