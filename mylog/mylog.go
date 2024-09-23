@@ -1,73 +1,48 @@
 package mylog
 
+/*
+iota 在常量声明区有特殊的作用：
+1:让编译器为每个常量复制相同的表达式，直到声明区结束（或者遇到一个新的赋值语句）。
+2：iota初始值0，之后iota值在每次处理为常量后，都会自增1。
+特别声明（每个常量区iota都是从0开始，每过一个变量iota都会1，不管有没有用iota赋值
+
+
+log包是多协程安全的
+
+*/
+
 import (
 	"fmt"
-	rotatelogs "github.com/lestrrat-go/file-rotatelogs"
-	"go.uber.org/zap"
-	"go.uber.org/zap/zapcore"
-	"io"
-	"time"
+	"log"
 )
 
-var Logger *zap.Logger
+const (
+	MB int = iota
+	MC     = 1
+	MD     = iota
+)
+
+const (
+	MA int = iota
+	ME
+	MX
+	MY
+	MF
+	MG
+)
+
+const (
+	Prefix = ""
+	Flags  = log.Ldate | log.Ltime | log.Lshortfile
+)
 
 func init() {
 	fmt.Println("---------welcome mylog init----------")
-	// 设置一些基本日志格式 具体含义还比较好理解，直接看zap源码也不难懂
-	encoder := zapcore.NewConsoleEncoder(zapcore.EncoderConfig{
-		MessageKey:  "msg",
-		LevelKey:    "level",
-		EncodeLevel: zapcore.CapitalLevelEncoder,
-		TimeKey:     "ts",
-		EncodeTime: func(t time.Time, enc zapcore.PrimitiveArrayEncoder) {
-			enc.AppendString(t.Format("2006-01-02 15:04:05"))
-		},
-		CallerKey:    "file",
-		EncodeCaller: zapcore.ShortCallerEncoder,
-		EncodeDuration: func(d time.Duration, enc zapcore.PrimitiveArrayEncoder) {
-			enc.AppendInt64(int64(d) / 1000000)
-		},
-	})
-	// 实现两个判断日志等级的interface (其实 zapcore.*Level 自身就是 interface)
-	infoLevel := zap.LevelEnablerFunc(func(lvl zapcore.Level) bool {
-		return lvl < zapcore.WarnLevel
-	})
-	warnLevel := zap.LevelEnablerFunc(func(lvl zapcore.Level) bool {
-		return lvl >= zapcore.WarnLevel
-	})
-	// 获取 info、warn日志文件的io.Writer 抽象 getWriter() 在下方实现
-	infoWriter := getWriter("./logs/demo.log")
-	warnWriter := getWriter("./logs/demo_error.log")
-	// 最后创建具体的Logger
-	core := zapcore.NewTee(
-		zapcore.NewCore(encoder, zapcore.AddSync(infoWriter), infoLevel),
-		zapcore.NewCore(encoder, zapcore.AddSync(warnWriter), warnLevel),
-	)
-	Logger = zap.New(core, zap.AddCaller()) // 需要传入 zap.AddCaller() 才会显示打日志点的文件名和行数, 有点小坑
-
-}
-func getWriter(filename string) io.Writer {
-	// 生成rotatelogs的Logger 实际生成的文件名 demo.log.YYmmddHH
-	// demo.log是指向最新日志的链接
-	// 保存7天内的日志，每1小时(整点)分割一次日志
-	hook, err := rotatelogs.New(
-		filename+".%Y%m%d%H", // 没有使用go风格反人类的format格式
-		rotatelogs.WithLinkName(filename),
-		rotatelogs.WithMaxAge(time.Hour*24*7),
-		rotatelogs.WithRotationTime(time.Hour),
-	)
-	if err != nil {
-		panic(err)
-	}
-	return hook
+	log.SetPrefix(Prefix)
+	log.SetFlags(Flags)
 }
 
-func TestMylog() {
-	for {
-		//写日志
-		Logger.Sugar().Info("hello mylog test info")
-		Logger.Sugar().Error("hello mylog test error")
-		time.Sleep(time.Duration(time.Second * 1))
-	}
-
+func TestLogFmt() {
+	fmt.Printf("-----------test logfmt ------------\n")
+	fmt.Printf("log iota %d %d %d\n", MB, MC, MD)
 }

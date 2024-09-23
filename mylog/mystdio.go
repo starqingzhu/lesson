@@ -1,4 +1,4 @@
-package mysrclib
+package mylog
 
 import (
 	"bytes"
